@@ -1,0 +1,177 @@
+div.Sidebar {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 200px;
+    background-color: var(--background-menu);
+    box-sizing: border-box;
+    transition: width 0.1s ease; /* Плавное изменение ширины */
+}
+
+div.Sidebar > div.Header {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid var(--line-menu);
+}
+
+div.Sidebar > div.Header > img {
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 13px;
+}
+
+div.Sidebar > div.Header > span {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Навигационное меню */
+div.Sidebar > ul.NavigationList {
+    margin-top: 30px;
+    list-style-type: none;
+    padding: 0px;
+}
+
+div.Sidebar > ul.NavigationList > li {
+    position: relative;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .1s all;
+    width: calc(100% - 20px);
+    border-radius: 8px;
+    padding-left: 40px; /* Отступ для иконки */
+}
+
+div.Sidebar > ul.NavigationList > li:hover {
+    background-color: var(--hover-menu-items);
+}
+
+div.Sidebar > ul.NavigationList > li > a:active,
+div.Sidebar > ul.NavigationList > li > a:hover,
+div.Sidebar > ul.NavigationList > li > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+div.Sidebar > ul.NavigationList > li > a > img {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    height: 30px;
+}
+
+div.Sidebar > ul.NavigationList > li > a > span {
+    position: absolute;
+    top: 7px;
+    left: 50px;
+    white-space: nowrap;
+    display: inline-block;
+    transition: opacity 0.1s ease;
+}
+
+/* Блок для пользователя */
+div.Sidebar > div.UserBulb {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-top: 1px solid var(--line-menu);
+}
+
+div.Sidebar > div.UserBulb > div.button {
+    border-radius: 20px;
+    border: 1px solid var(--line-menu);
+    padding: 5px;
+    background-color: var(--hover-menu-items);
+    margin: 15px 0;
+    width: 140px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+div.Sidebar > div.UserBulb > div.button > img {
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+div.Sidebar > div.UserBulb > div.button > span {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Медиазапрос для маленьких экранов */
+@media (max-width: 800px) {
+    div.Sidebar {
+        width: 60px; /* Сужаем сайдбар */
+        transition: 0.1s;
+    }
+
+    div.Sidebar > div.Header > span {
+        display: none; /* Скрываем текст в заголовке */
+    }
+
+    div.Sidebar > ul.NavigationList > li > a > span {
+        display: none; /* Скрываем текст в пунктах меню */
+    }
+
+    div.Sidebar > ul.NavigationList > li {
+        padding-left: 20px; /* Уменьшаем отступ для иконок */
+    }
+
+    div.Sidebar > ul.NavigationList > li > a > img {
+        height: 25px; /* Уменьшаем размер иконок */
+    }
+
+    div.Sidebar > div.UserBulb > div.button {
+        width: 45px; /* Уменьшаем размер кнопки */
+    }
+
+    div.Sidebar > div.UserBulb > div.button > img {
+        height: 20px; /* Уменьшаем иконку */
+        margin-left: 8px;
+        margin-top: 5px;
+    }
+    div.Sidebar > div.UserBulb > div.button > span {
+        display: none;
+    }
+    div.Sidebar > div.Header > img {
+        height: 33px;
+
+    }
+
+}
+
+@media (max-width: 500px) {
+    div.Sidebar {
+        width: 50px; /* Еще меньше на очень узких экранах */
+        transition: 0.1s;
+    }
+
+    div.Sidebar > ul.NavigationList > li {
+        padding-left: 10px; /* Еще меньше отступ для иконок */
+    }
+    div.Sidebar > ul.NavigationList > li > a {
+        left: 0px; /* Еще меньше отступ для иконок */
+    }
+
+    div.Sidebar > ul.NavigationList > li > a > img {
+        height: 25px; /* Еще меньше иконки */
+    }
+    div.Sidebar > div.UserBulb > div.button > span {
+        display: none;
+    }
+    div.Sidebar > div.Header > img {
+        height: 25px;
+
+    }
+
+}

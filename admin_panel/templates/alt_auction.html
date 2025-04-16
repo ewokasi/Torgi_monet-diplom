@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ meta_info['description'] }}">
+    <meta property="og:title" content="{{ meta_info['title'] }}">
+    <meta property="og:description" content="{{ meta_info['description'] }}">
+    <meta property="og:url" content="{{ meta_info['url'] }}">
+    <meta property="og:type" content="website">
+    <meta property="og:startDate" content="{{ meta_info['structured_data']['startDate'] }}">
+    <meta property="og:endDate" content="{{ meta_info['structured_data']['endDate'] }}">
+    <meta property="og:price" content="{{ meta_info['structured_data']['price'] }}">
+    <title>{{ meta_info['title'] }}</title>
+    <link rel="stylesheet" href="static/css/Holder.css">
+    <link rel="stylesheet" href="static/css/alt_auction.css">
+    <link rel="stylesheet" href="static/css/root.css">
+    <link rel="stylesheet" href="static/css/custom_alert.css">
+    <link rel="icon" href="static/images/favicon.ico">
+    <script src="static/js/custom_alert.js"></script>
+    
+</head>
+<body>
+    <div class="Sidebar"></div>
+    <div class="Holder">
+        <div class="dashboard-content">
+            <header class="auction-header">
+                <img src="static/images/back.svg" width="40px" style="margin-left: 10px;" alt="" onclick="window.open('/', '_self')">
+                <div class="auction-info">
+                    <p class="auction-dates">
+                        С <span id="auction-datetime"></span> по <span id="auction-datetime-end"></span>
+                    </p>
+                </div>
+            </header>
+
+
+            <main class="auction-main-content">
+                <section class="coin-photo">
+                    
+                        <div id="carousel-container" class="carousel"></div>
+                 
+                </section>
+                
+
+                <section class="coin-info">
+                    
+                    
+                    <div class="auction-info">
+                        
+                        <div class="status"> 
+                            <h2><span id="coin-name"></span></h2>
+                            <button class="status-button" id="status-button">...</button>
+                        </div>
+                        
+                    </div>
+
+                    <div class="coin-details">
+                        
+                        <div><strong>Описание:</strong> <span id="description"></span></div>
+                        <p><a href="#" id="coin-url"></a></p>
+                    </div>
+
+                    <div class="coin-prices">
+                        <p><strong>Начальная цена лота:</strong> <span id="starting-price"></span></p>
+                        <p><strong>Минимальный шаг ставки:</strong> <span id="min-bid-step"></span></p>
+                    </div>
+                </section>
+            </main>
+
+            <section class="auction-history-section">
+                <div class="history">
+                    <table id="bid-table">
+                        <thead>
+                            <tr><th>Имя</th><th>Ставка</th><th id="time">Время</th></tr>
+                        </thead>
+                        <tbody>
+                            <!-- Ставки будут добавляться здесь -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bid-section">
+                    <input type="number" class="bid-input" placeholder="Введите вашу ставку" min="1">
+                    <button class="bid-button" id="place-bid">Сделать ставку</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="static/js/auction.js"></script>
+    <script src="static/js/SidebarLoad.js"></script>
+
+</body>
+</html>

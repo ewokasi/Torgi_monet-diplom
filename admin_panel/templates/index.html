@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title and description for SEO -->
+    <title>Аукционы монет - Онлайн платформа</title>
+    <meta name="description" content="Узнайте всё о текущих, предстоящих и завершённых аукционах монет. Участвуйте, делайте ставки и побеждайте!">
+
+    <!-- Keywords for search engines -->
+    <meta name="keywords" content="аукционы, монеты, онлайн торги, коллекционные монеты, купить монеты, ставки, нумизмат">
+
+    <!-- Author information -->
+    <meta name="author" content="Монеты.ру">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="static/css/custom_alert.css">
+    <link rel="stylesheet" href="static/css/Holder.css">
+    <link rel="stylesheet" href="static/css/AuctionCard.css">
+    <link rel="stylesheet" href="static/css/Auctions.css">
+    <link rel="stylesheet" href="static/css/root.css">
+    <link rel="icon" href="static/images/favicon.ico">
+    <meta name="google-site-verification" content="HAlZ4y-L6wbpXewL4wf2JtmcPVaojQ5XEAfMJwcj-cg" />
+    <script src="static/js/custom_alert.js"></script>
+</head>
+<body>
+    
+    <div class = "Sidebar">
+
+    </div>
+
+    <div class="Holder">
+        <div id="loadingScreen" class="loading-screen">
+            <div class="spinner"> </div> 
+            <p>Загрузка...</p>
+        </div>
+        <div class="dashboard-content">
+            <h2 id="active-header" style="display: none;">Активные аукционы</h2>
+            <div id="activeAuctions" class="auction-grid"></div> <!-- Контейнер для активных аукционов -->
+
+            <h2 id="upcoming-header" style="display: none;">Предстоящие аукционы</h2>
+            <div id="upcomingAuctions" class="auction-grid"></div> <!-- Контейнер для предстоящих аукционов -->
+
+            <h2 id="finished-header" style="display: none;">Завершенные аукционы</h2>
+            <div id="completedAuctions" class="auction-grid"></div> <!-- Контейнер для завершенных аукционов -->
+        </div>
+    </div>
+
+
+    <script src="static/js/index.js"></script>
+    <script src="static/js/SidebarLoad.js"></script>
+</body>
+
+</html>

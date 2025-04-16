@@ -1,0 +1,139 @@
+
+/* Стили для чекбоксов */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color:  #ffa735; /* Цвет чекбоксов, чтобы соответствовать основному цвету кнопок */
+}
+
+/* Убедитесь, что стили работают на мобильных устройствах */
+@media (max-width: 480px) {
+    .checkbox-group label {
+        font-size: 14px;
+    }
+}
+
+.account-details-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+   
+   
+
+    border-radius: 10px;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1050px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="url"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #1b1b1b;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.submit-button {
+    padding: 12px 20px;
+    background-color:  var(--yellow);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--yellow);
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/* Адаптивные стили с медиазапросами */
+/* ============================= */
+
+/* Для экранов шириной до 1024px */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    .account-details-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+/* Для экранов шириной до 768px */
+@media (max-width: 768px) {
+   
+
+    .dashboard-content {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Для экранов шириной до 480px (мобильные устройства) */
+@media (max-width: 480px) {
+    .dashboard-content {
+        padding: 15px;
+    }
+
+    .account-details-container {
+        padding: 10px;
+    }
+
+    .form-group label {
+        font-size: 0.9em;
+    }
+
+    .submit-button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}

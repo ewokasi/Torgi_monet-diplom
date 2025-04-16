@@ -1,0 +1,35 @@
+
+.auction-grid {
+    padding-top: 15px;
+    margin-left: 10px;
+    display: grid;
+    
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 16px; /* Расстояние между карточками */
+  }
+  
+@media (max-width: 1400px) {
+    .auction-grid {
+        grid-template-columns: repeat(3, minmax(100px, 1fr)); /* 3 колонки на больших экранах */
+        transition: 0.1s;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .auction-grid {
+        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* 2 колонки на средних экранах */
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .auction-grid {
+        grid-template-columns: 1fr; /* 1 колонка на маленьких экранах */
+        grid-template-columns: repeat(1, minmax(200px, 1fr)); 
+        z-index: 9;
+        transition: 0.1s;
+      
+    }
+    .nav-bar{
+      z-index: 10;
+    }
+}

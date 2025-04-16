@@ -1,0 +1,228 @@
+/* Переменные для цветовой палитры */
+:root {
+    --color-bg-dark: #1B1B1B; /* Темный фон */
+    --color-bg-light: #292929; /* Светлый темный фон */
+    --color-text-primary: #D8D8D8; /* Основной цвет текста */
+    --color-text-secondary: #555; /* Вторичный цвет текста */
+    --color-accent: #ffa530; /* Акцентный цвет */
+    --color-accent-light: #ffb14b; /* Светлый акцент */
+    --color-shadow: rgba(0, 0, 0, 0.5); /* Тень */
+    --color-border: #D8D8D8; /* Цвет границы */
+}
+
+/* Базовые стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-bg-dark); /* Темный фон */
+    color: var(--color-text-primary); /* Основной цвет текста */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+        padding: 40px;
+    }
+}
+
+/* Секция информации */
+.info-section {
+    flex: 1;
+    background-color: var(--color-bg-light); /* Светлый темный фон */
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--color-shadow); /* Тень */
+    max-width: 500px;
+    text-align: center;
+    width: 98%
+}
+
+.info-content {
+    max-width: 450px;
+}
+
+.illustration {
+    max-width: 450px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 13px;
+}
+
+/* Заголовки и текст */
+h2 {
+    font-size: 24px;
+    color: var(--color-accent); /* Акцентный цвет */
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--color-text-primary); /* Основной текст */
+    font-size: 16px;
+}
+
+/* Форма */
+.form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-group{
+    margin-top: 10px;
+}
+
+.form-container {
+    background-color: var(--color-bg-light); /* Светлый темный фон */
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--color-shadow); /* Тень */
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--color-text-secondary); /* Вторичный текст */
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.tab-button.active {
+    font-weight: bold;
+    border-bottom: 3px solid var(--color-accent); /* Акцентный цвет */
+    color: var(--color-accent);
+}
+
+.tab-button:hover {
+    color: var(--color-accent-light); /* Светлый акцент */
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* Поля ввода */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="phone"],
+input[type="url"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--color-border); /* Цвет границы */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--color-bg-dark); /* Темный фон */
+    color: var(--color-text-primary); /* Основной текст */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="phone"]:focus,
+input[type="url"]:focus {
+    border-color: var(--color-accent); /* Акцентный цвет */
+    box-shadow: 0 0 8px rgba(255, 187, 99, 0.5); /* Мягкая подсветка */
+    outline: none;
+}
+
+.CookiesNotif{
+    text-align: center;
+}
+
+/* Кнопка отправки */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-accent); /* Акцентная кнопка */
+    color: #FFF; /* Белый текст */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--color-accent-light); /* Светлее при наведении */
+    transform: scale(1.05);
+}
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    outline: none;
+}
+.password-toggle svg path{
+    fill: #555;
+    transition: fill 0.3s ease;
+}
+.password-toggle:hover svg path{
+    fill: #ffbb63;
+}
+/* Отображение на мобильных */
+@media (max-width: 767px) {
+    .info-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        margin-bottom: 10px;
+    }
+}

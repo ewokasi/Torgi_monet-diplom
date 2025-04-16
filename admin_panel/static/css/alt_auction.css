@@ -1,0 +1,451 @@
+
+.auction-header {
+    margin-bottom: 10px;
+}
+
+.auction-timing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+}
+
+.status-button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: default;
+    font-size: 14px;
+}
+
+.photo-placeholder {
+    
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+/* Информация о монете */
+.coin-info {
+   
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.coin-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.coin-info ul li {
+    margin-bottom: 10px;
+}
+
+.coin-prices {
+    margin-top: 0px;
+}
+
+/* Основной контент аукциона */
+.auction-main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Секция с фото */
+.coin-photo {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* Фото монеты (плейсхолдер) */
+.photo-placeholder {
+    width: 95%;
+    height: 300px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Информация о монете */
+.coin-info {
+    display: grid;
+    min-width: 50%;
+    max-width: 65%;
+    grid-template-columns: repeat(1, 1fr); /* Create 2 equal-width columns */
+    grid-template-rows:  auto; /* 2 rows */
+    gap: 0px; /* Add space between grid items */
+    
+}
+.auction-info {
+    grid-column: span 2; /* Make item 1 span across both columns */
+}
+.coin-prices {
+    grid-column: span 2; /* Make item 1 span across both columns */
+}
+
+.coin-details {
+    grid-column: span 2; /* Make item 2 span across both columns */
+}
+/* Секция истории ставок и формы для ввода ставок */
+.auction-history-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* История ставок */
+.history {
+    flex: 1;
+    margin-right: 0px;
+   
+    padding: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+/* Поле ввода ставки и кнопка */
+.bid-section {
+    flex: 0.5;
+    gap: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+/* Стили для ввода ставки */
+.bid-input {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #070707;
+    border-radius: 5px;
+}
+
+/* Кнопка ставки */
+.bid-button {
+    padding: 10px 20px;
+    background-color: var(--yellow);
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bid-button:hover {
+    background-color: #e6b800;
+}
+
+/* Таблица ставок */
+#bid-table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#bid-table th,
+#bid-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #7c7c7c;
+}
+
+#bid-table th {
+   
+   
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+#bid-table tr:nth-child(even) {
+    background-color: #292929;
+}
+
+#bid-table tr:hover {
+    background-color: #636363;
+}
+
+/* Сообщение "Ставок пока нет" */
+#bid-table td[colspan="3"] {
+    text-align: center;
+    font-style: italic;
+    color: #dbdbdb;
+}
+
+.coin-photo {
+   
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    align-items: center;
+    display: flex; /* Используем flex для центрирования содержимого, если это необходимо */
+    justify-content: center; /* Центрирование по горизонтали */
+    overflow: hidden; /* Скрыть избыточные части изображения */
+    width: fit-content; /* Контейнер будет подстраиваться под размер изображения */
+    height: fit-content; /* Контейнер будет подстраиваться под размер изображения */
+}
+
+#coin-image {
+    object-fit: cover; /* Используйте cover, чтобы заполнить контейнер без искажения */
+}
+
+.zoom-container {
+    position: relative; /* Для позиционирования лупы относительно контейнера */
+    overflow: hidden; /* Скрыть части изображения, выходящие за пределы контейнера */
+}
+
+.zoom-lens {
+    position: absolute;
+    border: 2px solid #ffcc00; /* Цвет границы лупы */
+    border-radius: 50%; /* Сделать лупу круглой */
+    cursor: none; /* Убрать указатель курсора при наведении */
+    width: 100px; /* Размер лупы */
+    height: 100px; /* Размер лупы */
+    opacity: 0.6; /* Полупрозрачность */
+    pointer-events: none; /* Игнорировать события мыши для лупы */
+}
+
+.zoom-image {
+    position: absolute;
+    width: 200%; /* Увеличение размера изображения */
+    height: 200%; /* Увеличение размера изображения */
+    transform: translate(-50%, -50%); /* Центрирование увеличенного изображения */
+    display: none; /* Скрыто по умолчанию */
+    pointer-events: none; /* Игнорируем события мыши на увеличенном изображении */
+}
+/* CSS for improved header layout */
+.auction-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.auction-info {
+    display: flex;
+    flex-direction: row;
+    
+
+    text-align: center;
+}
+
+.auction-dates {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0px;
+}
+
+.status-button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+/* a{
+    text-decoration: none;
+    color: rgb(170, 153, 0);
+}
+ */
+
+/* a:visited {
+    color: rgb(102, 92, 0);
+  }
+  
+  a:focus {
+    border-bottom: 1px solid;
+    background: rgb(255, 243, 133);
+  }
+  
+  a:hover {
+    border-bottom: 1px solid;
+    background: rgb(255, 243, 133);
+  }
+  
+  a:active {
+    background: rgb(102, 92, 0);
+    color: rgb(255, 243, 133);
+  } */
+
+@media (max-width: 900px) {
+  
+    .auction-main-content {
+        flex-direction: column; /* Строки выстраиваются вертикально */
+        align-items: center; /* Центрируем содержимое */
+    }
+    
+    .coin-photo, .coin-info, .auction-history-section {
+        max-width: 100%;
+        width: 95%; /* Увеличиваем ширину для заполнения экрана */
+        margin-right: 0; /* Убираем правый отступ */
+        margin-bottom: 20px; /* Добавляем отступ внизу для отделения элементов */
+    }
+    .auction-history-section{
+        flex-direction: column-reverse;
+    }
+    
+    .auction-timing, .coin-details, .coin-prices {
+        text-align: left; /* Центрируем текст */
+    }
+
+    .bid-section {
+        width: 100%;
+        padding: 10px; /* Меньший отступ */
+    }
+    
+    .history {
+        width: 100%;
+        margin-bottom: 15px; /* Меньший отступ снизу */
+        margin-top: 15px; /* Меньший отступ снизу */
+    }
+
+    .status-button, .bid-button {
+        font-size: 14px;
+        padding: 8px 12px; /* Меньшие отступы кнопок */
+    }
+
+    .coin-photo img {
+        max-width: 95%;
+    }
+
+    .bid-input {
+        width: 95%;
+        font-size: 14px;
+        padding: 8px; /* Уменьшение отступов для ввода */
+    }
+}
+
+/* Для устройств с шириной до 480px */
+@media (max-width: 480px) {
+    /* Уменьшение заголовков */
+    h1, h2 {
+        font-size: 1.2em;
+        margin-left: 0px;
+    }
+
+    .auction-header h1 {
+        font-size: 1.4em;
+    }
+
+    .auction-main-content, .auction-timing, .history, .bid-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coin-photo, .coin-info, .history, .bid-section {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .coin-info, .coin-photo, .auction-timing, .status-button {
+        width: 95%;
+    }
+
+    .status-button, .bid-button {
+        font-size: 16px;
+        padding: 6px 8px; /* Еще меньшие отступы кнопок */
+    }
+
+    #bid-table th, #bid-table td {
+        font-size: 16px;
+        padding: 6px; /* Меньшие отступы в таблице */
+    }
+
+    /* Центрирование и уменьшение некоторых текстовых элементов */
+    .coin-details, .coin-prices, .history td, .history th {
+        font-size: 16px; /* Уменьшение шрифта */
+    }
+
+    /* Уменьшение размеров таблицы ставок */
+    #bid-table th, #bid-table td {
+        padding: 6px;
+    }
+
+    /* Лупа и увеличение изображения */
+    .zoom-lens {
+        width: 50px; /* Уменьшение размера лупы */
+        height: 50px;
+    }
+
+    /* Скрытие увеличенного изображения при наведении */
+    .zoom-image {
+        display: none;
+    }
+}
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+   
+    max-height: 220px;
+    display: block;
+    margin: auto;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: black;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="static/css/Acount.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/root.css">
+    <link rel="stylesheet" href="static/css/Holder.css">
+    
+</head>
+<body>
+    <div class="Sidebar">
+
+    </div>
+    <main class="Holder">
+        <div class ="account-details-container">
+            <section class="account-details">
+                <h2>Ваш Личный кабинет</h2>
+                <form id="accountForm">
+                    <div class="form-group">
+                        <label for="phone-number">Номер телефона для связи</label>
+                        <input type="text" id="phone-number" name="phone_number" value="+7 (900) 123-45-67">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="avito-url">URL Авито:</label>
+                        <input type="url" id="avito-url" name="avito_url" value="https://www.avito.ru/example">
+                    </div>
+    
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="bid-notification" name="mail_receive_bet_beated" checked>
+                            Получать уведомления о перебитой ставке
+                        </label>
+                    </div>
+    
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="auction-start-notification" name="mail_receive_auction_started">
+                            Получать уведомления о старте аукциона
+                        </label>
+                    </div>
+    
+                    <button type="submit" class="submit-button">Сохранить изменения</button>
+                </form>
+            </section>
+    
+            <section class="password-change">
+                <h2>Изменение пароля</h2>
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <label for="current-password">Текущий пароль:</label>
+                        <input type="password" id="current-password" name="currentPassword">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="new-password">Новый пароль:</label>
+                        <input type="password" id="new-password" name="newPassword">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="confirm-password">Повторите новый пароль:</label>
+                        <input type="password" id="confirm-password" name="confirmPassword">
+                    </div>
+    
+                    <button type="submit" class="submit-button">Изменить пароль</button>
+                </form>
+            </section>
+        </div>
+        
+    </main>
+
+    <script src = "static/js/SidebarLoad.js"></script>
+    <script src = "static/js/account.js"></script>
+    <script src = "static/js/custom_alert.js"></script>
+</body>
+</html>

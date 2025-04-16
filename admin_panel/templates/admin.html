@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="static/css/root.css">
+    <link rel="stylesheet" href="static/css/Holder.css">
+    <link rel="stylesheet" href="static/css/fonts.css">
+    <link rel="stylesheet" href="static/css/custom_alert.css">
+    <link rel="icon" href="static/images/favicon_admin.ico">
+    <script src="static/js/custom_alert.js"></script>
+    <link rel="stylesheet" href="static/css/admin.css">
+
+</head>
+<body>
+    <div class="Sidebar"></div>
+    <div class="Holder">
+<!-- Навигация для переключения между таблицами -->
+<nav class="navbar">
+    <button onclick="showAuctionsTable()">Все лоты</button>
+    <button onclick="showUsersTable()">Пользователи</button>
+    <button onclick="showActiveClientsTable()">Топ активности</button>
+    <a href="/create_auction"><button>Добавить лот</button></a>
+</nav>
+
+<div class="dashboard-container">
+   
+    <div id="auctionSearchContainer" class="search-container" style="display: none;">
+        <input type="text" id="auctionSearchInput" placeholder="Поиск по названию" oninput="filterAuctions()">
+    </div>
+    
+    <!-- Search for users -->
+    <div id="userSearchContainer" class="search-container" style="display: none;">
+        <input type="text" id="userSearchInput" placeholder="Поиск по имени, почте или номеру" oninput="filterUsers()">
+    </div>
+    <div id="activeuserSearchContainer" class="search-container" style="display: none;">
+        <input type="text" id="activeuserSearchInput" placeholder="Поиск по имени" oninput="filterActiveUsers()">
+    </div>
+    <!-- Основной контент -->
+    <div class="dashboard-content" id="dashboard-content">
+        <!-- Таблица аукционов -->
+        <table id="auctionsTable" class="data-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Название</th>
+                    <th>Изменить</th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+            <tbody id="auctionsTableBody">
+                <!-- Данные заполняются JavaScript'ом -->
+            </tbody>
+        </table>
+
+        <!-- Таблица пользователей -->
+        <table id="usersTable" class="data-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Имя</th>
+                    <th>Почта</th>
+                    <th>Номер</th>
+                    <th>Ред.</th>
+                    <th>Доступ</th>
+                </tr>
+            </thead>
+            <tbody id="usersTableBody">
+                <!-- Данные заполняются JavaScript'ом -->
+            </tbody>
+        </table>
+
+        <!-- Модальное окно для редактирования аукциона -->
+        <div id="editAuctionModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeEditAuctionModal()">&times;</span>
+                
+                <form id="editAuctionForm" >
+                    <div id="auctionFieldsContainer">
+                        <!-- Здесь будут добавляться динамические поля -->
+                    </div>
+                    <button type="button" onclick="saveAuctionChanges()">Save Changes</button>
+                </form>
+            </div>
+        </div>
+        <!-- Модальное окно для редактирования пользователя -->
+        <div id="editClientModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeEditClientModal()">&times;</span>
+                
+                <form id="editClientForm">
+                    <div id="clientFieldsContainer">
+                        <!-- Поля редактирования будут добавлены динамически здесь -->
+                    </div>
+                    <button type="button" onclick="saveClientChanges()">Save Changes</button>
+                </form>
+            </div>
+        </div>
+        <!-- Таблица активных пользователей -->
+        <table id="activeClientsTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Имя</th>
+                    <th>Почта</th>
+                    <th>Тел.</th>
+                    <th>Кол-во ставок</th>
+                </tr>
+            </thead>
+            <tbody id="activeClientsTableBody">
+                <!-- Строки будут добавлены динамически -->
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+    </div>
+    
+
+    <script src="static/js/admin.js"></script>
+    <script src="static/js/SidebarLoad.js"></script>
+</body>
+</html>

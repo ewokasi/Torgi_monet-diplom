@@ -1,0 +1,142 @@
+/* Переменные для цветовой палитры */
+:root {
+    --color-bg-light: #1e1e1e; /* Темный фон */
+    --color-bg-card: #292929; /* Темный фон карточек */
+    --color-text-primary: #d8d8d8; /* Светлый текст */
+    --color-border: #444; /* Цвет границы */
+    --color-accent-primary: #6c63ff; /* Основной акцент */
+    --color-accent-secondary: #8379ff; /* Акцент при наведении */
+    --color-accent-green: #4caf50; /* Зеленая кнопка */
+    --color-accent-green-hover: #45a049; /* Зеленая кнопка при наведении */
+    --color-shadow: rgba(0, 0, 0, 0.5); /* Мягкая тень */
+    --navbar-width-min: 250px; /* Минимальная ширина сайдбара */
+}
+
+/* Базовые стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-bg-light); /* Темный фон страницы */
+    color: var(--color-text-primary); /* Светлый текст */
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none; /* Скрыть контент */
+}
+
+/* Контейнер дашборда */
+.dashboard-container {
+    display: flex;
+    width: calc(100% - var(--navbar-width-min)); /* Вычитаем ширину сайдбара */
+    max-width: 80%;
+    margin: 10px;
+    margin-left: var(--navbar-width-min);
+    transition: 0.2s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Основной контент */
+.dashboard-content {
+    flex: 1;
+    padding: 0px;
+    overflow-y: auto;
+}
+
+.dashboard-header {
+    margin-bottom: 10px;
+}
+
+/* Карточка создания аукциона */
+.create-auction-container {
+    background-color: var(--color-bg-card); /* Темный фон карточки */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--color-shadow); /* Мягкая тень */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-text-primary); /* Светлый текст */
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="number"],
+input[type="url"],
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid var(--color-border); /* Темная граница */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--color-bg-light); /* Темный фон полей */
+    color: var(--color-text-primary); /* Светлый текст */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="datetime-local"]:focus {
+    border-color: var(--color-accent-primary); /* Основной акцент */
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.5); /* Подсветка */
+    outline: none;
+}
+
+/* Основная кнопка */
+.create-button {
+    padding: 12px 20px;
+    background-color: var(--color-accent-primary); /* Основной акцент */
+    color: #fff; /* Белый текст */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.create-button:hover {
+    background-color: var(--color-accent-secondary); /* Вторичный акцент */
+    transform: scale(1.05);
+}
+
+/* Кнопка добавления фото */
+.add-photo-button {
+    padding: 8px 15px;
+    background-color: var(--color-accent-green); /* Зеленая кнопка */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-photo-button:hover {
+    background-color: var(--color-accent-green-hover); /* Зеленая кнопка при наведении */
+}
+
+/* Альбом */
+#album-container {
+    margin-top: 20px;
+}
+
+#album input {
+    margin-top: 10px;
+    background-color: var(--color-bg-light); /* Темный фон ввода */
+    color: var(--color-text-primary); /* Светлый текст */
+    border: 1px solid var(--color-border); /* Граница */
+}
+
+#album img {
+    max-width: 100px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border); /* Темная граница изображений */
+}

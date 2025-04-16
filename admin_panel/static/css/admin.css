@@ -1,0 +1,221 @@
+/* Определение переменных цветов для черно-темно-желтой темы */
+:root {
+    --primary-color: #f0b112; /* Основной цвет (желтый) */
+    --primary-color-dark: #f57f17; /* Темный основной цвет */
+    --background-color-light: #212121; /* Черный фон для заголовков */
+    --background-color-light-hover: #424242; /* Темный фон для четных строк */
+    --background-color-hover: #616161; /* Цвет фона при наведении */
+    --border-color-light: #424242; /* Цвет границы */
+    --border-color-focus: #fbc02d; /* Цвет границы при фокусе */
+    --text-color-light: #ffffff; /* Цвет текста для заголовков */
+    --text-color-dark: #f5f5f5; /* Цвет текста для ячеек */
+    --modal-background: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон модального окна */
+    --modal-content-background: #333333; /* Фон для модального окна */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Тень для таблицы */
+    --button-background: #dfa922; /* Цвет фона кнопок */
+    --button-background-hover: #f57f17; /* Цвет фона кнопок при наведении */
+    --input-border-color: #424242; /* Цвет рамки для инпутов */
+    --input-border-color-focus: #fbc02d; /* Цвет рамки при фокусе */
+    --modal-close-color: #ffffff; /* Цвет для кнопки закрытия */
+    --navbar-background: #212121; /* Фон для navbar */
+    --search-border-color: #616161; /* Цвет для рамки инпута поиска */
+    --textarea-border-color: #424242; /* Цвет рамки для textarea */
+}
+
+table {
+    width: 80%;
+    max-width: 800px; /* Максимальная ширина таблицы */
+    margin: 20px auto; /* Выравнивание по центру экрана */
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px var(--shadow-color); /* Тень для визуального выделения */
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color-light);
+}
+
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+}
+table th {
+    background-color: var(--background-color-light);
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+table td {
+    color: var(--text-color-dark);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--background-color-light-hover);
+}
+
+table tr:hover {
+    background-color: var(--background-color-hover);
+}
+
+/* Медиазапросы для адаптивного дизайна */
+@media (max-width: 1024px) {
+    table {
+        width: 90%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .search-container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        width: 95%;
+        font-size: 12px;
+    }
+    table th, table td {
+        padding: 10px;
+    }
+    table td {
+        font-size: 12px;
+    }
+
+    .search-container {
+        width: 90%;
+    }
+
+    .navbar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .search-container input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-background); /* Полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Поверх других элементов */
+    
+}
+
+.modal-content {
+    background-color: var(--modal-content-background);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    height: 70%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding-bottom: 30px;
+    overflow-y: auto;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+    border-color: var(--input-border-color-focus);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--modal-close-color);
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: var(--button-background);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-background-hover);
+}
+
+.navbar {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-container {
+    margin-bottom: 10px;
+    margin: 20px;
+    text-align: left;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--search-border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#previewImg {
+    max-width: 100px;
+    margin-top: 10px;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--textarea-border-color);
+    border-radius: 4px;
+    resize: none;
+    box-sizing: border-box;
+    min-height: 250px;
+    overflow: overlay;
+}

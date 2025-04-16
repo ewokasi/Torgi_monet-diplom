@@ -1,0 +1,93 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/create_auction.css">
+    <link rel="stylesheet" href="static/css/custom_alert.css">
+    <link rel="stylesheet" href="static/css/Holder.css">
+    <link rel="stylesheet" href="static/css/root.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css"> <!-- Подключение темной темы -->
+    <link rel="icon" href="static/images/favicon_admin.ico">
+    <script src="static/js/custom_alert.js"></script>
+    <title>Создание Аукциона</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</head>
+
+<body id="body" >
+    <div class="dashboard-container">
+        <!-- Боковое меню -->
+       <div class= "Sidebar"></div>
+        <div class="Holder">
+
+            <div class="dashboard-content">
+                <header class="dashboard-header">
+                </header>
+    
+                <main class="create-auction-container">
+                    <form id="createAuctionForm">
+                        <div class="form-group">
+                            <label for="auction-name">Название аукциона:</label>
+                            <input type="text" id="short_name" name="auctionName" placeholder="Монета Олимпиадная" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="start_datetime">Время начала:</label>
+                            <input type="text" id="start_datetime" name="auctionTime" placeholder="дд.мм.гггг чч:мм 28.11.2024 19:30" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end_datetime">Время окончания:</label>
+                            <input type="text" id="end_datetime" name="auctionTime" placeholder="дд.мм.гггг чч:мм 28.12.2024 6:30" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="start_price">Начальная цена:</label>
+                            <input type="number" id="start_price" name="startingPrice" placeholder="13500" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="min_bid_step">Минимальный шаг ставки:</label>
+                            <input type="number" id="min_bid_step" name="minBidStep" placeholder="500" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Описание</label>
+                            <input type="text" id="description" name="description" placeholder="Монета из золота" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bank">Ссылка на <a href="https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/">Банк России</a>. Если нет - отсавьте поле пустым</label>
+                            <input type="text" id="bank" name="bank" placeholder="https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5111-0178-24">
+                        </div>
+                        <div class="form-group">
+                            <label for="coin-photo">Обложка для лота PNG/JPG (Обязательно): </label>
+                            <input type="file" id="coin-photo" name="coinPhoto" accept="image/*" required>
+                            <img id="preview-image" src="#" alt="Превью фото" style="display:none; margin-top:10px; max-width:200px;">
+                        </div>
+                        
+                        <!-- Кнопка для добавления дополнительных фотографий -->
+                        
+    
+                        <!-- Скрытые дополнительные фото -->
+                        <div id="album-container" class="form-group" style="display:block;">
+                            <label for="album">Дополнительные фотографии (Опционально):</label>
+                            <label for="album">Будут учитываться только заполненные ячейки</label>
+                            <div id="album">
+                                <!-- Новые фотографии будут добавляться сюда -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="add-photo-button" class="add-photo-button" onclick="addAlbumPhotoInput()">Добавить еще поле ввода для фотографии</button>
+                        </div>        
+                        <button type="submit" class="create-button">Создать аукцион</button>
+                    </form>
+                </main>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script src="static/js/create_auction.js"></script>
+    <script src="static/js/SidebarLoad.js"></script>
+   
+</body>
+
+</html>

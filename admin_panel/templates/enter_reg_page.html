@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/enter_reg_page.css">
+    <link rel="stylesheet" href="static/css/custom_alert.css">
+    <link rel="icon" href="static/images/favicon.ico">
+    
+    <script src="static/js/custom_alert.js"></script>
+    <title>Главная - Регистрация и Вход</title>
+</head>
+
+<body>
+    <div class="container">
+        
+        <!-- Левая часть с информацией -->
+        <div class="info-section">
+            <div class="info-content">
+                <img src="static/images/login_cat.png" alt="" class="illustration slide-in">
+                <h2>Получайте монеты</h2>
+                <p>Присоединяйтесь к системе онлайн торгов.</p>
+            </div>
+        </div>
+
+        <!-- Правая часть с регистрацией/входом -->
+        <div class="form-section bounce-in">
+            <div class="form-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'login')">Вход</button>
+                    <button class="tab-button" onclick="openTab(event, 'register')">Регистрация</button>
+                </div>
+                <div id="login" class="tab-content active">
+                    <form id="loginForm">
+                        
+                       
+                        <div class="form-group">
+                            <label for="login-mail">e-mail (обязательно):</label>
+                            <input type="text" id="login-mail" name="mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Пароль:</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="login-password" name="password" required>
+                                <button type="button" onclick="togglePasswordVisibility('login-password', this)" class="password-toggle">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 5C7.58 5 3.75 7.61 2 12c1.75 4.39 5.58 7 10 7s8.25-2.61 10-7c-1.75-4.39-5.58-7-10-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="#555"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="CookiesNotif">Мы используем <strong>файлы Cookie</strong> для авторизации!
+                            Входя, Вы даете согласие на использование <strong>Cookie</strong>.</p>
+                        <button type="submit" class="submit-button">Войти</button>
+                    </form>
+                </div>
+                <div id="register" class="tab-content">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="register-phone">Телефон (обязательно):</label>
+                            <input type="phone" id="register-phone"  placeholder="+7 (___) ___-__-__" maxlength="18" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-phone">e-mail (обязательно):</label>
+                            <input type="text" id="register-email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-nickname">Псевдоним (обязательно):</label>
+                            <input type="text" id="register-nickname" name="nickname" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="register-password">Пароль:</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="register-password" name="password" required>
+                                <button type="button" onclick="togglePasswordVisibility('register-password', this)" class="password-toggle">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 5C7.58 5 3.75 7.61 2 12c1.75 4.39 5.58 7 10 7s8.25-2.61 10-7c-1.75-4.39-5.58-7-10-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="#555"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Подтверждение пароля:</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="confirm-password" name="confirm_password" required>
+                                <button type="button" onclick="togglePasswordVisibility('confirm-password', this)" class="password-toggle">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#555" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 5C7.58 5 3.75 7.61 2 12c1.75 4.39 5.58 7 10 7s8.25-2.61 10-7c-1.75-4.39-5.58-7-10-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="#555"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-button">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/scripts.js"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+from .enter_reg_page import enter_reg_page

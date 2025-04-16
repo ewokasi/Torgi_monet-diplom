@@ -1,0 +1,123 @@
+
+.card-list {
+    width: 90%;
+    max-width: 400px;
+    
+  }
+  
+  .card {
+    background-color:var(--card_background);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 50px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 1.2rem;
+    position: relative;
+    transition: 0.15s ease-in;
+    width: 100%;
+   
+  }
+  
+  .card:hover, .card:focus-within {
+    box-shadow: 0 0 0 2px var(--yellow), 0 10px 60px 0 rgba(0, 0, 0, 0.1);
+    transform: translatey(-5px);
+  }
+  
+  .card-image {
+    border-radius: 10px;
+    margin: 0px;
+    overflow: hidden;  /* Чтобы изображение не выходило за границы */
+    min-height: 150px;
+    max-height: 200px;
+    width: 100%; /* Чтобы картинка занимала всю ширину контейнера */
+    display: flex;
+    justify-content: center; /* Центрирование изображения по горизонтали */
+    align-items: center; /* Центрирование изображения по вертикали */
+  }
+  
+  .card-image img {
+    object-fit:fill; /* Картинка масштабируется, сохраняя пропорции */
+    max-height: 200px; /* Ограничение высоты картинки по размеру контейнера */
+    max-width: 100%; /* Ограничение ширины картинки по размеру контейнера */
+  }
+  
+  
+  .card-header {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-header a {
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    padding-right: 1rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .icon-button {
+    border: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    transition: 0.25s ease;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    cursor: pointer;
+    color: #565656;
+  }
+  
+  .icon-button:hover, .icon-button:focus {
+    background-color: #EC4646;
+    color: #FFF;
+  }
+  
+  .card-footer {
+    margin-top: 1.25rem;
+    border-top: 1px solid #c7950a;
+    padding-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .card-meta {
+    display: flex;
+    align-items: center;
+    color: #787878;
+  }
+  
+  .card-meta:first-child:after {
+    display: block;
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: currentcolor;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+  
+  .card-meta svg {
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.25em;
+  }
+  
+  #completedAuctions .card img{
+    filter: grayscale(1);
+  }
+  
+  #completedAuctions .card:hover, .card:focus-within {
+    box-shadow: 0 0 0 2px #7a7a7a, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
+    transform: translatey(-5px);
+  }

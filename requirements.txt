@@ -1,0 +1,10 @@
+aiohttp
+asyncio
+fastapi==0.111.0
+motor==3.6.0
+uvicorn==0.30.3
+fastapi-login==1.9.2
+aiosmtplib==3.0.2
+slowapi==0.1.9
+pillow==11.0.0
+pytz==2024.2
