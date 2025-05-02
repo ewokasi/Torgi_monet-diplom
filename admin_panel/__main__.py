@@ -8,6 +8,6 @@ if __name__ == "__main__":
         host=config.get("FastAPI")['host'],
         port=config.get("FastAPI")['port']+1,
         reload=config.get("FastAPI")['reload'],
-        ssl_certfile=config.get("FastAPI").get("ssl_certfile"),
-        ssl_keyfile=config.get("FastAPI").get("ssl_keyfile"),
+        # ssl_certfile=config.get("FastAPI").get("ssl_certfile"),
+        #ssl_keyfile=config.get("FastAPI").get("ssl_keyfile"),
     )

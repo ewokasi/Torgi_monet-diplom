@@ -13,8 +13,8 @@ from slowapi.middleware import SlowAPIMiddleware
 from slowapi.errors import RateLimitExceeded
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["100/minute"])
-#app = FastAPI(docs_url="/docs", redoc_url=None)
-app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
+app = FastAPI(docs_url="/docs", redoc_url="/redoc")
+#app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
